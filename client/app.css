@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,400italic,700,700italic);
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+header.h3 {
+    font-weight: 400;
+}
+
+header.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 5px 5px #eaeaea;
+}
+
+input[type="text"] {
+    width: 65%;
+    margin: 0 10px;
+    line-height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+div.content {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}
+
+div.menu {
+    height: 100%;
+}
+
+div.menu-item {
+    width: 20%;
+    max-width: 200px;
+    min-width: 150px;
+    float: left;
+    height: 100%;
+    line-height: 80px;
+    text-align: center;
+}
+
+div.menu-logo {
+    width: 220px;
+    float: left;
+    height: 100%;
+    line-height: 80px;
+    text-align: center;
+    font-weight: 400;
+    color: #1976D2;
+}
+
+div.menu-item:hover {
+    font-weight: 400;
+    background-color: #F5F5F5;
+}
+
+div.search {
+    float: right;
+    height: 100%;
+    line-height: 80px;
+    text-align: center;
+    font-weight: 400;
+    color: #1976D2;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    font-weight: 300;
+    border: 1px solid #9E9E9E;
+    padding: 5px;
+    background-color: #F5F5F5;
+}
+
+th {
+    background-color: #2196F3;
+}
+
+table.fullwidth {
+    width: 100%;
+}
