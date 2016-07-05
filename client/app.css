@@ -28,7 +28,7 @@ input[type="text"] {
 
 div.content {
     position: absolute;
-    top: 80px;
+    top: 85px;
     width: 100%;
 }
 
@@ -76,15 +76,28 @@ table {
 
 table, th, td {
     font-weight: 300;
-    border: 1px solid #9E9E9E;
-    padding: 5px;
-    background-color: #F5F5F5;
+    padding: 15px 5px;
+    text-align: center;
 }
 
-th {
+tr {
+    background-color: #F5F5F5;
+    border: 1px solid #9E9E9E;
+}
+
+thead {
     background-color: #2196F3;
+    border: 1px solid #9E9E9E;
 }
 
 table.fullwidth {
     width: 100%;
+}
+
+tr.clickable {
+    cursor: pointer;
+}
+
+tr.clickable:hover {
+    background-color: #B3E5FC;
 }
