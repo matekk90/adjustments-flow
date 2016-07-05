@@ -8,19 +8,34 @@ export function loadOrders() {
                 'name': 'Adam Nowak',
                 'orderId': '123',
                 'isDone': 'tak',
-                'currentStatus': ''
+                'currentStatus': '',
+                'items': [
+                    { 'name': 'Cokół', 'remarks': 'Do poprawy' },
+                    { 'name': 'Front', 'remarks': 'Do poprawy' },
+                    { 'name': 'Blat', 'remarks': 'Do poprawy' }
+                ]
             },
             {
                 'name': 'Jan Kowalski',
                 'orderId': '124',
                 'isDone': 'nie',
-                'currentStatus': 'Lakiernia'
+                'currentStatus': 'Lakiernia',
+                'items': [
+                    { 'name': 'Cokół', 'remarks': 'Do poprawy' },
+                    { 'name': 'Front', 'remarks': 'Do poprawy' },
+                    { 'name': 'Blat', 'remarks': 'Do poprawy' }
+                ]
             },
             {
                 'name': 'Hubert Urbański',
                 'orderId': '345',
                 'isDone': 'nie',
-                'currentStatus': 'Szlifiernia'
+                'currentStatus': 'Szlifiernia',
+                'items': [
+                    { 'name': 'Cokół', 'remarks': 'Do poprawy' },
+                    { 'name': 'Front', 'remarks': 'Do poprawy' },
+                    { 'name': 'Blat', 'remarks': 'Do poprawy' }
+                ]
             }
         ];
 
