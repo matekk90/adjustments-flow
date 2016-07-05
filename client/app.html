@@ -1,27 +1,11 @@
 <header class="fixed">
     <div class="menu">
         <div class="menu-logo">Adjustments Flow</div>
-        <div class="menu-item">Zlecenia</div>
-        <div class="menu-item">Szczegóły zlecenia</div>
+        <div class="menu-item" [routerLink]="['/OrdersList']">Zlecenia</div>
+        <div class="menu-item">Dodaj zlecenie</div>
         <div class="search">Szukaj<input disabled type="text"/></div>
     </div>
 </header>
 <div class="content">
-    <header>
-        <h3>Zlecenia:</h3>
-    </header>
-    <table class="fullwidth">
-        <thead>
-            <th>Nazwa</th>
-            <th>Nr Zlecenia</th>
-            <th>Zrealizowano</th>
-            <th>Aktualny etap</th>
-        </thead>
-        <tr (click)="console.log('click')" *ngFor="let order of orders">
-            <td>{{order.name}}</td>
-            <td>{{order.orderId}}</td>
-            <td>{{order.isDone}}</td>
-            <td>{{order.currentStatus}}</td>
-        </tr>
-    </table>
+    <router-outlet></router-outlet>
 </div>

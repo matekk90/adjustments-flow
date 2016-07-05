@@ -1,20 +1,20 @@
 import 'reflect-metadata';
-import { Component } from '@angular/core';
+import { Component, provide } from '@angular/core';
 import { bootstrap } from 'angular2-meteor-auto-bootstrap';
-import { Orders }   from '../collections/orders.ts';
-import { Mongo }     from 'meteor/mongo';
+import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from '@angular/router-deprecated';
+import { APP_BASE_HREF } from '@angular/common';
+import { OrdersList } from './imports/orders-list/orders-list.ts';
+import { OrderDetails } from './imports/order-details/order-details.ts';
 
 @Component({
     selector: 'app',
-    templateUrl: '/client/app.html'
+    templateUrl: '/client/app.html',
+    directives: [ROUTER_DIRECTIVES]
 })
-class TempControl {
-    orders:Mongo.Cursor<Object>;
+@RouteConfig([
+    { path: '/', name: 'OrdersList', component: OrdersList },
+    { path: '/order/:orderId', name: 'OrderDetails', component: OrderDetails }
+])
+class TempControl {}
 
-    constructor() {
-        this.orders = Orders.find();
-        console.log(this.orders);
-    }
-}
-
-bootstrap(TempControl);
+bootstrap(TempControl, [ROUTER_PROVIDERS, provide(APP_BASE_HREF, { useValue: '/' })]);

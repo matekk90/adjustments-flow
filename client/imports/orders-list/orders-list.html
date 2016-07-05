@@ -1,0 +1,17 @@
+<header>
+    <h3>Zlecenia:</h3>
+</header>
+<table class="fullwidth">
+    <thead>
+    <th>Nazwa</th>
+    <th>Nr Zlecenia</th>
+    <th>Zrealizowano</th>
+    <th>Aktualny etap</th>
+    </thead>
+    <tr class="clickable" *ngFor="let order of orders" [routerLink]="['/OrderDetails', {orderId: order._id}]">
+        <td>{{order.name}}</td>
+        <td>{{order.orderId}}</td>
+        <td>{{order.isDone}}</td>
+        <td>{{order.currentStatus}}</td>
+    </tr>
+</table>
