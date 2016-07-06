@@ -9,13 +9,25 @@ import { Orders } from '../../../collections/orders.ts';
 })
 export class OrderDetails {
     order:Object;
+    orderId:String;
 
     constructor(params:RouteParams, ngZone: NgZone) {
-        var orderId = params.get('orderId');
+        this.orderId = params.get('orderId');
         Tracker.autorun(() => {
             ngZone.run(() => {
-                this.order = Orders.findOne(orderId);
+                this.order = Orders.findOne(this.orderId);
+                this.order.isDone = _.findWhere(this.order.items, { isDone: false }) === undefined ? true : false;
+                _.forEach(this.order.items, function(item) {
+                    item.isDone = _.findWhere(item.actions, { isDone: false }) === undefined ? true : false;
+                });
             });
         });
+    }
+
+    updateIsDoneGroup(item, action, event) {
+        action.isDone = event.target.checked;
+        item.isDone = _.findWhere(item.actions, { isDone: false }) === undefined ? true : false;
+        this.order.isDone = _.findWhere(this.order.items, { isDone: false }) === undefined ? true : false;
+        Orders.update({_id: this.orderId}, this.order);
     }
 }

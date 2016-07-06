@@ -6,12 +6,12 @@
     <th>Nazwa</th>
     <th>Nr Zlecenia</th>
     <th>Zrealizowano</th>
-    <th>Aktualny etap</th>
+    <th>Gotowe elementy</th>
     </thead>
     <tr class="clickable" *ngFor="let order of orders" [routerLink]="['/OrderDetails', {orderId: order._id}]">
         <td>{{order.name}}</td>
         <td>{{order.orderId}}</td>
-        <td>{{order.isDone}}</td>
-        <td>{{order.currentStatus}}</td>
+        <td><input type="checkbox" [(ngModel)]="order.isDone" disabled/></td>
+        <td>-</td>
     </tr>
 </table>
